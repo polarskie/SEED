@@ -1,0 +1,402 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>SEED Dataset</title>
+    <meta name="description" content="website description"/>
+    <meta name="keywords" content="website keywords, website keywords"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" type="text/css" href="style/style.css" title="style"/>
+    <style type="text/css">
+<!--
+body,td,th {
+	font-size: 0.8em;
+}
+.STYLE1 {font-size: 150%}
+.STYLE2 {font-family: "Courier New", Courier, monospace}
+.STYLE3 {font-size: medium}
+.STYLE4 {font-size: medium; font-weight: bold; }
+.STYLE5 {color: #FF0000}
+.STYLE6 {font-size: medium; font-weight: bold; color: #FF0000; }
+-->
+
+    </style>
+</head>
+
+<body>
+<div id="main">
+    <div id="header">
+        <div id="logo">
+            <div style="position:relative; height: 30px"></div>
+            <div id="logo_text">
+                <!-- class="logo_colour", allows you to change the colour of the text -->
+                <h1><a href="index.html"><strong>SEED<span class="logo_colour"> Dataset </span></strong></a></h1>
+                <h2 class="STYLE1">A dataset collection for various purposes using EEG signals </h2>
+            </div>
+            <div align="right">
+                <a href="http://www.sjtu.edu.cn/"><img src="img/sjtu.png" width="108" height="108" border="0"></a>
+                <a href="http://bcmi.sjtu.edu.cn/"><img src="img/bcmi.png" width="266" height="111" border="0"></a>
+            </div>
+        </div>
+        <div id="menubar">
+            <ul id="menu">
+                <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
+                <li class=""><a href="index.html">Home</a></li>
+                <li class="drop-down selected"><a href="#">description<span
+                        class="triangle-border-down"></span></a>
+                    <!--<div style="position:absolute;">-->
+                        <div class="drop-down-content">
+                            <div class="drop-down-item" onclick="window.location.href='seed.html'">SEED</div>
+                            <div class="drop-down-item" onclick="window.location.href='#'">SEED-IV</div>
+                            <div class="drop-down-item" onclick="window.location.href='seed-vig.html'">SEED-VIG</div>
+                        </div>
+                    <!--</div>-->
+                </li>
+                <li class="drop-down"><a href="downloads.html">download<span class="triangle-border-down"></span></a>
+                    <!--<div style="position:absolute;">-->
+                        <div class="drop-down-content">
+                            <div class="drop-down-item" onclick="window.location.href='downloads.html#seed-access-anchor'">SEED</div>
+                            <div class="drop-down-item" onclick="window.location.href='downloads.html#seed-iv-access-anchor'">SEED-IV</div>
+                            <div class="drop-down-item" onclick="window.location.href='downloads.html#seed-vig-access-anchor'">SEED-VIG</div>
+                        </div>
+                    <!--</div>-->
+                </li>
+                <li><a href="publications.html">Publication</a></li>
+                <li><a href="contacts.html">Contact Us</a></li>
+                <!--<li><a href="contact.html">Contact Us</a></li>-->
+            </ul>
+        </div>
+    </div>
+    <div id="site_content">
+<div class="container padding-container" style="text-align:justify; text-justify:inter-ideograph;">
+    <h2 style="margin: 5px 0px 12px">Experiment Setup</h2>
+    72 film clips were carefully chosen by a preliminary study, which have the tendency of inducing happy, sad, fear
+    or neutral emotion.
+    <table class="row align-items-center" style="margin-top: 20px; margin-bottom: 20px">
+        <tr>
+        <td class="col-3">
+        </td>
+        <td class="col-6"><img src="img/seed-iv/film-clips.png" class="img-fluid" alt="Responsive image" style="width: 100%">
+        </td>
+        <td class="col-3">
+        </td>
+        </tr>
+    </table>
+    A total number of 15 subjects participated the experiment.
+    For each participant, 3 sessions are performed on different days, and each session contains 24 trials.
+    In one trial, the participant watch one of the film clips, while his(her) EEG signals and eye motion are collected
+    with the 62-channel <a href="http://compumedicsneuroscan.com/">ESI NeuroScan System</a> and
+    <a href=" https://www.smivision.com/eye-tracking/product/eye-tracking-glasses/">SMI eye-tracking glasses</a>.
+    An schedule diagram of trial is as follows.
+    <table class="row align-items-center" style="margin-top: 20px; margin-bottom: 20px">
+        <tr>
+        <td class="col-2">
+        </td>
+        <td class="col-8"><img src="img/seed-iv/trial.png" class="img-fluid" alt="Responsive image" style="width: 100%">
+        </td>
+        <td class="col-2">
+        </td>
+        </tr>
+    </table>
+    The experiment scene and the corresponding EEG electrode placement are shown in the following figures.
+    <table class="row align-items-center" style="margin-top: 20px; margin-bottom: 20px">
+        <tr>
+        <td class="col-1">
+        </td>
+        <td class="col-6"><div class="padding-container"><img src="img/seed-iv/environment.png" class="img-fluid" alt="Responsive image" style="width: 100%">
+        </div></td>
+        <td class="col-4"><div class="padding-container"><img src="img/seed-iv/montage.png" class="img-fluid" alt="Responsive image" style="width: 100%">
+        </div></td>
+        <td class="col-1">
+        </td>
+        </tr>
+    </table>
+
+    <h2 style="margin: 25px 0px 12px">Feature Extraction</h2>
+    Each session is sliced into 4-second non-overlapping segments.
+    Each segment is regarded as one data sample during model training.
+    <!--The feature extraction happens in EEG signals and eye motion information within each of the segments.-->
+    <h4 style="margin: 15px 0px 8px">EEG Features</h4>
+    For the EEG signals, we extract power spectral density (PSD) and differential entropy (DE) features
+    within each segment at 5 frequency
+    bands: 1) delta: 1~4 Hz; 2) theta: 4~8 Hz; 3) alpha: 8~14 Hz; 4) beta: 14~31 Hz; and 5) gamma: 31~50 Hz.
+    The calculation of PSD and DE of a random variable
+    <img src="img/seed-iv/x.png" class="img-fluid" alt="Responsive image" style="position: relative; top: -0.1em; left: -0.1em; height: 1em;">:
+    <table class="row align-items-center" style="margin-top: 20px; margin-bottom: 20px">
+        <tr>
+        <td class="col-4">
+        </td>
+        <td class="col-4"><img src="img/seed-iv/psd-de-calculation-1.png" class="img-fluid" alt="Responsive image" style="width: 100%">
+        </td>
+        <td class="col-4">
+        </td>
+        </tr>
+    </table>
+    We assume the EEG signals obey gaussian distribution: <img src="img/seed-iv/gaussian.png" class="img-fluid" alt="Responsive image" style="position: relative; top: -0.1em; left: -0.1em; height: 2em;">.
+    Then the calculation of DE features can be simplified:
+    <table class="row align-items-center" style="margin-top: 20px; margin-bottom: 20px">
+        <tr>
+        <td class="col-1">
+        </td>
+        <td class="col-10"><img src="img/seed-iv/psd-de-calculation-2.png" class="img-fluid" alt="Responsive image" style="width: 100%">
+        </td>
+        <td class="col-1">
+        </td>
+        </tr>
+    </table>
+
+    <h4 style="margin: 15px 0px 8px">Eye Motion Features</h4>
+    For the eye motion information collected with the SMI eye tracking glasses, we extracted various features from
+    different detailed parameters used in the literature, such as pupil diameter, fixation, saccade, and blink.
+    A detailed list of eye motion features is shown below.
+    <table class="row align-items-center" style="margin-top: 20px; margin-bottom: 20px">
+        <tr>
+        <td class="col-2">
+        </td>
+        <td class="col-8"><img src="img/seed-iv/eye-motion-feature-list.png" class="img-fluid" alt="Responsive image" style="width: 100%">
+        </td>
+        <td class="col-2">
+        </td>
+        </tr>
+    </table>
+
+
+    <h2 style="margin: 25px 0px 12px">Dataset Summary</h2>
+    You can find four folders and 2 files in the dataset folder.
+    <ol style="list-style-position: inside; padding-left: 0; margin-left: 0;">
+        <li>
+            The "eeg_raw_data" folder contains the raw EEG signals of the 15 participants. The inner 3 folders named '1',
+            '2' and '3' correspond to the 3 sessions. For each ".mat" file in the folders, it stores a structure with
+            fields named "cz_eeg1", "cz_eeg2", ..., "cz_eeg24", which correspond to the EEG signals recorded during
+            the 24 trials. Below show the architecture of one of the files.
+
+            <table class="row align-items-center" style="margin-top: 20px; margin-bottom: 20px">
+                <tr>
+                <td class="col-3">
+                </td>
+                <td class="col-6"><img src="img/seed-iv/eeg-raw.png" class="img-fluid" alt="Responsive image" style="width: 100%">
+                </td>
+                <td class="col-3">
+                </td>
+                </tr>
+            </table>
+        </li>
+        <li>
+            The "eeg_feature_smooth" folder has the same structure as eeg_raw_data's. Each ".mat" file stores a structure
+            with fields named "{X}_{Y}{Z}". The "X" indicates the type of feature, can be "psd" or "de". The "Y"
+            indicates the type of smoothing method, can be "movingAve" or "LDS".
+            Linear dynamic system (LDS) and moving average are two different approaches to filter out noise and
+            artifacts that are unrelated to the EEG features.
+            The "Z" indicates the trial number.
+            Each field is in shape of channel_number*sample_number*frequency_bands, that is 62*W*5,
+            where W indicates the number of time windows in that trial (different
+            trials have different W because the film clips are not in same length).
+            Below shows the architecture of one of the files.
+
+            <table class="row align-items-center" style="margin-top: 20px; margin-bottom: 20px">
+                <tr>
+                <td class="col-3">
+                </td>
+                <td class="col-6"><img src="img/seed-iv/eeg-feature.png" class="img-fluid" alt="Responsive image" style="width: 100%">
+                </td>
+                <td class="col-3">
+                </td>
+                </tr>
+            </table>
+        </li>
+        <li>
+            The "eye_raw_data" folder contains raw data of eye motion information recorded with the eye tracking glasses.
+            There are 5 files for each session, which are in the following form:<br/><br/>
+            <ul>
+            <li>{SubjectName}_{Date}_blink.mat</li>
+            <li>{SubjectName}_{Date}_event.mat</li>
+            <li>{SubjectName}_{Date}_fixation.mat</li>
+            <li>{SubjectName}_{Date}_pupil.mat</li>
+            <li>{SubjectName}_{Date}_saccade.mat</li>
+        </ul>
+
+            The description of each file is as follows.<br/><br/>
+            <ul>
+                <li>
+                    {SubjectName}_{Date}_blink.mat<br>
+                    Here shows the structure of one of the files.
+                    <table class="row align-items-center" style="margin-top: 20px; margin-bottom: 20px">
+                        <tr>
+                        <td class="col-5">
+                        </td>
+                        <td class="col-2"><img src="img/seed-iv/eye-blink.png" class="img-fluid" alt="Responsive image" style="width: 100%">
+                        </td>
+                        <td class="col-5">
+                        </td>
+                        </tr>
+                    </table>
+
+                    We can see that there are 24 matrices in the file,
+                    corresponding to 24 movie clips.
+                    For example, in the first movie clip, 89 represents the number of blinks,
+                    and the data in this matrix represents the duration [ms] of each blink.
+                    That is, the subject blinked 89 times, and each blink duration was recorded.
+                </li>
+                <li>
+                    {SubjectName}_{Date}_event.mat<br>
+
+                    Here shows the structure of one of the files.
+                    <table class="row align-items-center" style="margin-top: 20px; margin-bottom: 20px">
+                        <tr>
+                        <td class="col-5">
+                        </td>
+                        <td class="col-2"><img src="img/seed-iv/eye-event.png" class="img-fluid" alt="Responsive image" style="width: 100%">
+                        </td>
+                        <td class="col-5">
+                        </td>
+                        </tr>
+                    </table>
+
+                    We can see that there are 24 matrices in the file,
+                    corresponding to 24 movie clips. 28 in each matrix stand for 28 kinds of events,
+                    which can be found in the following table.
+
+
+                    <table class="row align-items-center" style="margin-top: 20px; margin-bottom: 20px">
+                        <tr>
+                        <td class="col-2">
+                        </td>
+                        <td class="col-8"><img src="img/seed-iv/eye-event-table.png" class="img-fluid" alt="Responsive image" style="width: 100%">
+                        </td>
+                        <td class="col-2">
+                        </td>
+                        </tr>
+                    </table>
+
+                </li>
+                <li>
+                    {SubjectName}_{Date}_fixation.mat<br>
+                    Here shows the structure of one of the files.
+                    <table class="row align-items-center" style="margin-top: 20px; margin-bottom: 20px">
+                        <tr>
+                        <td class="col-5">
+                        </td>
+                        <td class="col-2"><img src="img/seed-iv/eye-fixation.png" class="img-fluid" alt="Responsive image" style="width: 100%">
+                        </td>
+                        <td class="col-5">
+                        </td>
+                        </tr>
+                    </table>
+
+                   We can see that there are 24 matrices in the file,
+                    corresponding to 24 movie clips. For example, in the first movie clip,
+                    439 represents the number of fixation, and the data in the matrix represents the fixation duration
+                    [ms].
+
+                </li>
+                <li>
+                    {SubjectName}_{Date}_pupil.mat<br>
+                    Here shows the structure of one of the files.
+                    <table class="row align-items-center" style="margin-top: 20px; margin-bottom: 20px">
+                        <tr>
+                        <td class="col-5">
+                        </td>
+                        <td class="col-2"><img src="img/seed-iv/eye-pupil.png" class="img-fluid" alt="Responsive image" style="width: 100%">
+                        </td>
+                        <td class="col-5">
+                        </td>
+                        </tr>
+                    </table>
+
+                   We can see that there are 24 matrices in the file,
+                    corresponding to 24 movie clips.
+                    For example, in first film clip, 439 stand for the number of pupil recording and the
+                    4 stand for 4 features, namely ‘Average Pupil Size [px] X’, ‘Average Pupil Size [px] Y’,
+                    ‘Dispersion X’ and ‘ Dispersion Y’, respectively.
+
+                </li>
+                <li>
+                    {SubjectName}_{Date}_saccade.mat<br>
+                    Here shows the structure of one of the files.
+                    <table class="row align-items-center" style="margin-top: 20px; margin-bottom: 20px">
+                        <tr>
+                        <td class="col-5">
+                        </td>
+                        <td class="col-2"><img src="img/seed-iv/eye-saccade.png" class="img-fluid" alt="Responsive image" style="width: 100%">
+                        </td>
+                        <td class="col-5">
+                        </td>
+                        </tr>
+                    </table>
+                    We can see that there are 24 matrices in the file,
+                    corresponding to 24 movie clips. For example, in first film clip,
+                    444 stand for the number of saccade and the 2 stand for 2 features,
+                    which are ‘Saccade Duration [ms]’ and ‘Amplitude [°]’, respectively.
+
+                </li>
+            </ul>
+        </li>
+        <li>
+            The "eye_feature_smooth" folder contains features extracted from the files in the eye_raw_data folder.
+            The naming of the files follows the "{SubjectName}_{date}.mat" formation. The structure of each file is
+            shown in the following figure.
+            <table class="row align-items-center" style="margin-top: 20px; margin-bottom: 20px">
+                <tr>
+                <td class="col-2">
+                </td>
+                <td class="col-8"><img src="img/seed-iv/eye-feature.png" class="img-fluid" alt="Responsive image" style="width: 100%">
+                </td>
+                <td class="col-2">
+                </td>
+                </tr>
+            </table>
+            The left part shows 24 fields, each of them for one session.
+            The right part shows the data matrix in one of the fields.
+            Each row corresponds to one type of feature, and each column corresponds to one data sample.
+            The relationship between the row number and the feature type is
+            <ul>
+                <li>
+                    1-12 : Pupil diameter (X and Y)
+                </li>
+                <li>
+                    13-16: Dispersion (X and Y)
+                </li>
+                <li>
+                    17-18: Fixation duration (ms)
+                </li>
+                <li>
+                    19-22: Saccade
+                </li>
+                <li>
+                    23-31: Event statistics
+                </li>
+            </ul>
+        </li>
+        <li>
+            The "Channel Order.xlsx" file lists the channel names in the EEG placement figure in the order of
+            the channels in the EEG raw data provided in the "eeg_raw_data" folder.
+        </li>
+        <li>
+            The "ReadMe.txt" file demonstrates the label of each trial in each session and some other additional information.
+        </li>
+    </ol>
+
+
+    <h2 style="margin: 25px 0px 12px">Download</h2>
+
+    <a class="btn btn-outline-dark" href="downloads.html#seed-iv-access-anchor" style="font-size: 1.5em">
+        <img src="img/download-icon.png" style="position:relative; top: 0.3em; height: 1.5em">
+        Download SEED-IV</a>
+
+
+    <h2 style="margin: 25px 0px 12px">References</h2>
+            <p class="reference" style="text-align:justify; text-justify:inter-ideograph">
+    Wei-Long Zheng, Wei Liu, Yifei Lu, Bao-Liang Lu, and Andrzej Cichocki, EmotionMeter:
+    A Multimodal Framework for Recognizing Human Emotions. IEEE Transactions on Cybernetics, 2018.
+    [<a href="https://ieeexplore.ieee.org/abstract/document/8283814/">link</a>]
+    [<a href="resource/bib/seed-iv-1.htm">BibTex</a>]
+            </p>
+</div>
+    </div>
+    <div id="content_footer"></div>
+    <div id="footer">
+        Copyright &copy; 2018 BCMI
+    </div>
+</div>
+</body>
+</html>

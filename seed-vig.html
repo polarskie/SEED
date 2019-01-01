@@ -1,0 +1,200 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>SEED Dataset</title>
+    <meta name="description" content="website description"/>
+    <meta name="keywords" content="website keywords, website keywords"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" type="text/css" href="style/style.css" title="style"/>
+    <style type="text/css">
+<!--
+body,td,th {
+	font-size: 0.8em;
+}
+.STYLE1 {font-size: 150%}
+.STYLE2 {font-family: "Courier New", Courier, monospace}
+.STYLE3 {font-size: medium}
+.STYLE4 {font-size: medium; font-weight: bold; }
+.STYLE5 {color: #FF0000}
+.STYLE6 {font-size: medium; font-weight: bold; color: #FF0000; }
+-->
+
+    </style>
+</head>
+
+<body>
+<div id="main">
+    <div id="header">
+        <div id="logo">
+            <div style="position:relative; height: 30px"></div>
+            <div id="logo_text">
+                <!-- class="logo_colour", allows you to change the colour of the text -->
+                <h1><a href="index.html"><strong>SEED<span class="logo_colour"> Dataset </span></strong></a></h1>
+                <h2 class="STYLE1">A dataset collection for various purposes using EEG signals </h2>
+            </div>
+            <div align="right">
+                <a href="http://www.sjtu.edu.cn/"><img src="img/sjtu.png" width="108" height="108" border="0"></a>
+                <a href="http://bcmi.sjtu.edu.cn/"><img src="img/bcmi.png" width="266" height="111" border="0"></a>
+            </div>
+        </div>
+        <div id="menubar">
+            <ul id="menu">
+                <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
+                <li class=""><a href="index.html">Home</a></li>
+                <li class="drop-down selected"><a href="#">description<span
+                        class="triangle-border-down"></span></a>
+                    <!--<div style="position:absolute;">-->
+                        <div class="drop-down-content">
+                            <div class="drop-down-item" onclick="window.location.href='seed.html'">SEED</div>
+                            <div class="drop-down-item" onclick="window.location.href='seed-iv.html'">SEED-IV</div>
+                            <div class="drop-down-item" onclick="window.location.href='#'">SEED-VIG</div>
+                        </div>
+                    <!--</div>-->
+                </li>
+                <li class="drop-down"><a href="downloads.html">download<span class="triangle-border-down"></span></a>
+                    <!--<div style="position:absolute;">-->
+                        <div class="drop-down-content">
+                            <div class="drop-down-item" onclick="window.location.href='downloads.html#seed-access-anchor'">SEED</div>
+                            <div class="drop-down-item" onclick="window.location.href='downloads.html#seed-iv-access-anchor'">SEED-IV</div>
+                            <div class="drop-down-item" onclick="window.location.href='downloads.html#seed-vig-access-anchor'">SEED-VIG</div>
+                        </div>
+                    <!--</div>-->
+                </li>
+                <li><a href="publications.html">Publication</a></li>
+                <li><a href="contacts.html">Contact Us</a></li>
+                <!--<li><a href="contact.html">Contact Us</a></li>-->
+            </ul>
+        </div>
+    </div>
+    <div id="site_content">
+<div class="container padding-container" style="text-align:justify; text-justify:inter-ideograph;">
+    <h2 style="margin: 5px 0px 12px">Experiment Setup</h2>
+    We developed a simulated driving system to collect the EEG and EOG signals, as well as to label the signals.
+    A four-lane highway scene is shown on a large
+    LCD screen in front of a real vehicle without the unnecessary
+    engine and other components. The vehicle movements
+    in the software are controlled by the steering wheel and gas
+    pedal, and the scenes are simultaneously updated according
+    to the participants’ operations. The road is primarily straight
+    and monotonous to induce fatigue in the subjects more easily.
+    The simulated driving system and the experimental scene are:
+    <table class="row align-items-center" style="margin-top: 20px; margin-bottom: 20px">
+        <tr>
+        <!--<td class="col-2">-->
+        <!--</td>-->
+        <td class="col-12"><img src="img/seed-vig/scene-photo.png" class="img-fluid" alt="Responsive image" style="width: 100%">
+        </td>
+        <!--<td class="col-2">-->
+        <!--</td>-->
+        </tr>
+    </table>
+    Most experiments were performed in the early afternoon
+    after lunch to induce fatigue easily when
+    the circadian rhythm of sleepiness reached its peak. The duration of the entire experiments were
+    approximately 2h. The participants were asked to drive the car
+    in a simulated, dull environments.
+
+    We used Neuroscan system to record the EEG and EOG during the experiments.
+    The channels that are used in the features extraction are shown as follows.
+
+    <table class="row align-items-center" style="margin-top: 20px; margin-bottom: 20px">
+        <tr>
+        <td class="col-2">
+        </td>
+        <td class="col-4"><div class="padding=container"><img src="img/seed-vig/montage-top.png" class="img-fluid" alt="Responsive image"
+                              style="width: 100%"></div></td>
+        <td class="col-4"><div class="padding=container"><img src="img/seed-vig/montage-front.png" class="img-fluid" alt="Responsive image"
+                                                              style="width: 100%"></div></td>
+        <td class="col-2">
+        </td>
+        </tr>
+    </table>
+
+    Additionally, the participants wear
+    <a href=" https://www.smivision.com/eye-tracking/product/eye-tracking-glasses/">SMI eye-tracking glasses</a> so that
+    their eye motion was also recorded. We then calculate the PERCLOS indicator values of the participants during the
+    experiment and use them as the vigilance labels.
+
+    <h2 style="margin: 25px 0px 12px">Feature Extraction</h2>
+    For the temporal and occipital channels, PSD and DE features are directly extracted at the frequency bands referred
+    above. For the forehead channels, we decompose the original EEG signals to forehead EEG signals
+    (which is mostly related to the subjects' brain activity) and
+    EOG signals (which is mostly related to the subjects' eye motion induced electrical field fluctuation, by means of
+    ICA and minus methods. The EOG components are then used to produce 36 eye motion related features.
+    The <a href=" https://www.smivision.com/eye-tracking/product/eye-tracking-glasses/">SMI eye-tracking glasses</a> provides information about eye closure, so we can simply calculate the PERCLOS labels
+    by the following formulation.
+
+    <table class="row align-items-center" style="margin-top: 20px; margin-bottom: 20px">
+        <tr>
+        <td class="col-3">
+        </td>
+        <td class="col-6"><img src="img/seed-vig/perclos.png" class="img-fluid" alt="Responsive image"
+                              style="width: 100%"></td>
+        <td class="col-3">
+        </td>
+        </tr>
+    </table>
+
+    <h2 style="margin: 25px 0px 12px">Dataset Summary</h2>
+    The SEED-VIG dataset is composed of four parts.
+
+    <ol style="list-style-position: inside; padding-left: 0; margin-left: 0;">
+        <li>
+            EEG features include:
+            <ul>
+                <li>
+                    EEG_Feature_2Hz: EEG features (power spectral density: PSD, differential entropy: DE)
+                    from the total frequency band (1~50 Hz) with a 2 Hz frequency resolution.
+                    The fields "psd_movingAve", "psd_LDS", "de_movingAve", and "de_LDS" indicate PSD with moving average,
+                    PSD with linear dynamic system, DE with moving average, and DE with linear dynamic system, respectively.
+                    The data format is channel*sample_number*frequency_bands (17*885*25).
+                    The first 1-5 in the first dimension 'channel' are corresponding to temporal brain areas,
+                    and the last 7-17 are corresponding to posterior brain areas.
+                </li>
+                <li>
+                    EEG_Feature_5Bands: This is similar to the EEG_feature_2Hz file except that EEG features (PSD, DE)
+                    are extracted from five frequency bands: delta (1~4 Hz),
+                    theta (4~8 Hz), alpha (8~14 Hz), beta (14~31 Hz), and gamma (31~50 Hz).
+                    The data format is channel*sample number*frequency bands (17*885*5).
+                </li>
+            </ul>
+        </li>
+        <li>
+            Forehead EEG feature files have similar architecture with EEG feature's, but there has only four channels for the
+            data tensor (4*885*25 and 4*885*5).
+        </li>
+        <li>
+            EOG features. The fields "features_table_ica", "features_table_minus", and "features_table_icav_minh"
+            indicate forehead EOG features corresponding to different VEO and HEO separation methods using ICA and
+            minus approaches. The data format is sample number*feature dimension (885*36).
+        </li>
+        <li>
+            The PERCLOS label files contain continuous vigilance labels (range from 0 to 1) calculated from eye
+            tracking data.
+        </li>
+    </ol>
+
+
+    <h2 style="margin: 25px 0px 12px">Download</h2>
+
+    <a class="btn btn-outline-dark" href="downloads.html#seed-vig-access-anchor" style="font-size: 1.5em">
+        <img src="img/download-icon.png" style="position:relative; top: 0.3em; height: 1.5em">
+        Download SEED-VIG</a>
+
+    <h2 style="margin: 25px 0px 12px">References</h2>
+    <p class="reference" style="text-align:justify; text-justify:inter-ideograph">
+    1. Wei-Long Zheng and Bao-Liang Lu, A multimodal approach to estimating vigilance using EEG and forehead EOG.
+    Journal of Neural Engineering, 14(2): 026017, 2017.
+    [<a href="http://iopscience.iop.org/article/10.1088/1741-2552/aa5a98/meta">link</a>]
+    [<a href="resource/bib/seed-vig-1.htm">BibTex</a>]
+    </p>
+</div>
+    </div>
+    <div id="content_footer"></div>
+    <div id="footer">
+        Copyright &copy; 2018 BCMI
+    </div>
+</div>
+</body>
+</html>

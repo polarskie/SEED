@@ -1,0 +1,265 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>SEED Dataset</title>
+    <meta name="description" content="website description"/>
+    <meta name="keywords" content="website keywords, website keywords"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" type="text/css" href="style/style.css" title="style"/>
+    <style type="text/css">
+<!--
+body,td,th {
+	font-size: 0.8em;
+}
+.STYLE1 {font-size: 150%}
+.STYLE2 {font-family: "Courier New", Courier, monospace}
+.STYLE3 {font-size: medium}
+.STYLE4 {font-size: medium; font-weight: bold; }
+.STYLE5 {color: #FF0000}
+.STYLE6 {font-size: medium; font-weight: bold; color: #FF0000; }
+-->
+
+    </style>
+</head>
+
+<body>
+<div id="main">
+    <div id="header">
+        <div id="logo">
+            <div style="position:relative; height: 30px"></div>
+            <div id="logo_text">
+                <!-- class="logo_colour", allows you to change the colour of the text -->
+                <h1><a href="index.html"><strong>SEED<span class="logo_colour"> Dataset </span></strong></a></h1>
+                <h2 class="STYLE1">A dataset collection for various purposes using EEG signals </h2>
+            </div>
+            <div align="right">
+                <a href="http://www.sjtu.edu.cn/"><img src="img/sjtu.png" width="108" height="108" border="0"></a>
+                <a href="http://bcmi.sjtu.edu.cn/"><img src="img/bcmi.png" width="266" height="111" border="0"></a>
+            </div>
+        </div>
+        <div id="menubar">
+            <ul id="menu">
+                <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
+                <li class=""><a href="index.html">Home</a></li>
+                <li class="drop-down"><a href="#">description<span
+                        class="triangle-border-down"></span></a>
+                    <!--<div style="position:absolute;">-->
+                        <div class="drop-down-content">
+                            <div class="drop-down-item" onclick="window.location.href='seed.html'">SEED</div>
+                            <div class="drop-down-item" onclick="window.location.href='seed-iv.html'">SEED-IV</div>
+                            <div class="drop-down-item" onclick="window.location.href='seed-vig.html'">SEED-VIG</div>
+                        </div>
+                    <!--</div>-->
+                </li>
+                <li class="drop-down"><a href="downloads.html">download<span class="triangle-border-down"></span></a>
+                    <!--<div style="position:absolute;">-->
+                        <div class="drop-down-content">
+                            <div class="drop-down-item" onclick="window.location.href='downloads.html#seed-access-anchor'">SEED</div>
+                            <div class="drop-down-item" onclick="window.location.href='downloads.html#seed-iv-access-anchor'">SEED-IV</div>
+                            <div class="drop-down-item" onclick="window.location.href='downloads.html#seed-vig-access-anchor'">SEED-VIG</div>
+                        </div>
+                    <!--</div>-->
+                </li>
+                <li class="selected"><a href="#">Publication</a></li>
+                <li><a href="contacts.html">Contact Us</a></li>
+                <!--<li><a href="contact.html">Contact Us</a></li>-->
+            </ul>
+        </div>
+    </div>
+    <div id="site_content">
+        <div class="container padding-container">
+    <h2 align="center" style="margin: 0.2em 0px 15px; font-size: 1.8em">A Multimodal Approach to Estimating Vigilance Using EEG and Forehead EOG</h2>
+    <h5 align="center" style="font-size: 1.1em">Wei-Long Zheng, Bao-Liang Lu</h5>
+
+    <p class="long-paragraph" style="text-align:justify; text-justify:inter-ideograph;">
+    <strong>Abstract</strong>: Objective. Covert aspects of ongoing user mental states provide key context information for user-aware human computer interactions. In this paper, we focus on the problem of estimating the vigilance of users using EEG and EOG signals.Approach. The PERCLOS index as vigilance annotation is obtained from eye tracking glasses. To improve the feasibility and wearability of vigilance estimation devices for real-world applications, we adopt a novel electrode placement for forehead EOG and extract various eye movement features, which contain the principal information of traditional EOG. We explore the effects of EEG from different brain areas and combine EEG and forehead EOG to leverage their complementary characteristics for vigilance estimation. Considering that the vigilance of users is a dynamic changing process because the intrinsic mental states of users involve temporal evolution, we introduce continuous conditional neural field and continuous conditional random field models to capture dynamic temporal dependency. Main results. We propose a multimodal approach to estimating vigilance by combining EEG and forehead EOG and incorporating the temporal dependency of vigilance into model training. The experimental results demonstrate that modality fusion can improve the performance compared with a single modality, EOG and EEG contain complementary information for vigilance estimation, and the temporal dependency-based models can enhance the performance of vigilance estimation. From the experimental results, we observe that theta and alpha frequency activities are increased, while gamma frequency activities are decreased in drowsy states in contrast to awake states. Significance. The forehead setup allows for the simultaneous collection of EEG and EOG and achieves comparative performance using only four shared electrodes in comparison with the temporal and posterior sites.
+    </p>
+    <div class="row align-items-center" style="margin-top: 20px; margin-bottom: 20px">
+        <div class="col-1">
+        </div>
+        <div class="col"><img src="img/publications/seed-vig-experiment.png" class="img-fluid" alt="Responsive image" style="width: 100%">
+        </div>
+        <div class="col-1">
+        </div>
+    </div>
+
+    <p class="long-paragraph" style="text-align:justify; text-justify:inter-ideograph;">
+    To collect EEG and EOG data, we developed a virtualreality-based simulated driving system. A total of 23 subjects (mean age: 23.3, STD: 1.4, 12 females) participated in the experiments. The duration of the entire experiment was
+approximately 2 hours. The participants were asked to drive the car in the simulated environments without any alertness. Both EEG and forehead EOG signals were recorded simultaneously using the Neuroscan system with a 1000 Hz sampling rate. Eye movements were simultaneously recorded using SMI ETG eye tracking glasses.
+    </p>
+    <div class="row align-items-center" style="margin-top: 20px; margin-bottom: 20px">
+        <div class="col-1">
+        </div>
+        <div class="col"><img src="img/publications/seed-vig-electrodes.png" class="img-fluid" alt="Responsive image" style="width: 100%">
+        </div>
+        <div class="col-1">
+        </div>
+    </div>
+
+    <p class="long-paragraph" style="text-align:justify; text-justify:inter-ideograph;">
+    We separated EEG and EOG signals from the shared forehead electrodes. The main advantage of this concept is that we can leverage the favourable properties of both EEG and EOG modalities while simultaneously not increasing the setup cost.
+    </p>
+    <div class="row align-items-center" style="margin-top: 20px; margin-bottom: 20px">
+        <div class="col-1">
+        </div>
+        <div class="col"><img src="img/publications/seed-vig-alpha.png" class="img-fluid" alt="Responsive image" style="width: 100%">
+        </div>
+        <div class="col-1">
+        </div>
+    </div>
+
+    <p class="long-paragraph" style="text-align:justify; text-justify:inter-ideograph;">
+    Vigilance is a dynamic changing process because the intrinsic mental states of users involve temporal evolution. Modality fusion with temporal dependency can significantly enhance the performance in comparison with a single modality. Fusion of forehead EOG and forehead EEG achieves comparable performance with only four shared electrodes.
+    </p>
+    <div class="row align-items-center" style="margin-top: 20px; margin-bottom: 20px">
+        <div class="col-1">
+        </div>
+        <div class="col"><img src="img/publications/seed-vig-ccrfccnf.png" class="img-fluid" alt="Responsive image" style="width: 100%">
+        </div>
+        <div class="col-1">
+        </div>
+    </div>
+
+    <p class="long-paragraph" style="text-align:justify; text-justify:inter-ideograph;">
+    The continuous vigilance estimation of dierent methods in one experiment. As shown, the predictions from our
+    proposed approaches are almost consistent with the true subjects' behaviours and cognitive states.
+    </p>
+    <div class="row align-items-center" style="margin-top: 20px; margin-bottom: 20px">
+        <div class="col-1">
+        </div>
+        <div class="col"><img src="img/publications/seed-vig-visual.png" class="img-fluid" alt="Responsive image" style="width: 100%">
+        </div>
+        <div class="col-1">
+        </div>
+    </div>
+
+    <!--<p style="text-align:justify; text-justify:inter-ideograph; color: red">-->
+    <!--The Multimodal Dataset with EEG and forehead EOG for Vigilance Estimation (SEED-VIG) is avaliable for download-->
+        <!--in the <a href="#">DOWNLOAD</a> page.-->
+    <!--</p>-->
+
+    <h3>Reference</h3>
+    <p class="reference" style="text-align:justify; text-justify:inter-ideograph">
+    1. Wei-Long Zheng and Bao-Liang Lu, A multimodal approach to estimating vigilance using EEG and forehead EOG.
+        Journal of Neural Engineering, 14(2): 026017, 2017. [<a href="http://iopscience.iop.org/article/10.1088/1741-2552/aa5a98/meta">link</a>]
+    </p>
+    <p class="reference" style="text-align:justify; text-justify:inter-ideograph">
+    2. Xue-Qin Huo, Wei-Long Zheng, and Bao-Liang Lu, Driving Fatigue Detection with Fusion of EEG and Forehead EOG,
+        in Proc. of International Joint Conference on Neural Networks (IJCNN-16), 2016: 897-904. [<a href="http://ieeexplore.ieee.org/document/7727294/">link</a>]
+    </p>
+    <p class="reference" style="text-align:justify; text-justify:inter-ideograph">
+        3. Nan Zhang, Wei-Long Zheng, Wei Liu, and Bao-Liang Lu,Continuous Vigilance Estimation using LSTM Neural
+        Networks. in Proc. of the 23nd International Conference on Neural Information Processing (ICONIP2016),
+        2016: 530-537. [<a href="https://link.springer.com/chapter/10.1007/978-3-319-46672-9_59">link</a>
+    </p>
+    <!------------------------------------------------------------------------------------------------------->
+    <!------------------------------------------------------------------------------------------------------->
+    <!------------------------------------------------------------------------------------------------------->
+    <!------------------------------------------------------------------------------------------------------->
+    <!------------------------------------------------------------------------------------------------------->
+    <!------------------------------------------------------------------------------------------------------->
+    <!------------------------------------------------------------------------------------------------------->
+    <!------------------------------------------------------------------------------------------------------->
+    <!------------------------------------------------------------------------------------------------------->
+    <HR style="border:1 dashed #987cb9; margin: 50px 0px;">
+    <!------------------------------------------------------------------------------------------------------->
+    <!------------------------------------------------------------------------------------------------------->
+    <!------------------------------------------------------------------------------------------------------->
+    <!------------------------------------------------------------------------------------------------------->
+    <!------------------------------------------------------------------------------------------------------->
+    <!------------------------------------------------------------------------------------------------------->
+    <!------------------------------------------------------------------------------------------------------->
+    <!------------------------------------------------------------------------------------------------------->
+    <!------------------------------------------------------------------------------------------------------->
+    <h2 align="center" style="margin: 35px 0px 15px; font-size: 1.8em">Investigating Critical Frequency Bands andChannels for EEG-based Emotion Recognition
+        with Deep Neural Networks</h2>
+    <h5 align="center" style="font-size: 1.1em">Wei-Long Zheng, Bao-Liang Lu</h5>
+    <p class="long-paragraph" style="text-align:justify; text-justify:inter-ideograph">
+        <strong>Abstract</strong>: To investigate critical frequency bands and channels, this paper introduces deep belief networks (DBN) to constructing EEG-based emotion recognition models for three emotions: positive, neutral and negative. We develop an EEG dataset acquired from 15 subjects. Each subject performs the experiments twice at the interval of a few days. DBNs are trained with differential entropy features extracted from multichannel EEG data. We examine the weights of the trained DBNs and investigate the critical frequency bands and channels. Four different profiles of 4, 6, 9 and 12 channels are selected. The recognition accuracies of these four profiles are relatively stable with the best accuracy of 86.65%, which is even better than that of the original 62 channels. The critical frequency bands and channels determined by using the weights of trained DBN are consistent with the existing observations. In addition, our experiment results show that neural signatures associated with different emotions do exist and they share commonality across sessions and individuals. We compare the performance of deep models with shallow models. The average accuracies of DBN, SVM, LR and KNN are 86.08%, 83.99%, 82.70% and 72.60%, respectively.
+    </p>
+    <div class="row align-items-center" style="margin-top: 20px; margin-bottom: 20px">
+        <div class="col-1">
+        </div>
+        <div class="col"><img src="img/publications/seed-DBN.png" class="img-fluid" alt="Responsive image" style="width: 100%">
+        </div>
+        <div class="col-1">
+        </div>
+    </div>
+
+    <p class="long-paragraph" style="text-align:justify; text-justify:inter-ideograph">
+    We find that there exist specific neural patterns in high frequency bands for positive, neutral and negative
+emotions through time-frequency analysis. For positive emotion, it shows that energy of beta and gamma frequency bands increases whereas neutral and negative emotions have lower energy of beta and gamma frequency bands. While the neural patterns of neutral and negative emotions have similar patterns in beta and gamma bands, neutral emotions have higher energy of alpha oscillations. These findings provide fundamental evidences for understanding the mechanism of emotion processing in the brain.
+    </p>
+
+    <table class="row align-items-center" style="margin-top: 20px; margin-bottom: 20px; width: 100%">
+        <tr>
+        <td class="col-6"><div class="padding-container"><img src="img/publications/seed-zjy2.png" class="img-fluid" alt="Responsive image" style="width: 100%">
+        </div>
+        </td>
+        <td class="col-6"><div class="padding-container"><img src="img/publications/seed-weight_distrib.png" class="img-fluid" alt="Responsive image" style="width: 100%">
+        </div>
+        </td>
+        </tr>
+    </table>
+    <p class="long-paragraph" style="text-align:justify; text-justify:inter-ideograph">
+    We design four different profiles of electrodes placements according to features of high peaks in the weight
+distribution and asymmetric properties in emotion processing.
+    </p>
+    <table class="row align-items-center" style="margin-top: 20px; margin-bottom: 20px; width: 100%">
+        <tr>
+        <td class="col-6"><div class="padding-container"><img src="img/publications/seed-weight-topo.png" class="img-fluid" alt="Responsive image" style="width: 100%">
+        </div>
+        </td>
+        <td class="col-6"><div class="padding-container"><img src="img/publications/seed-select-channels.png" class="img-fluid" alt="Responsive image" style="width: 100%">
+        </div>
+        </td>
+        </tr>
+    </table>
+    <p class="long-paragraph" style="text-align:justify; text-justify:inter-ideograph">
+    The mean accuracies and standard deviations (%) of SVM for different profiles of electrodes sets are shown below:
+    </p>
+    <div class="row align-items-center" style="margin-top: 20px; margin-bottom: 20px">
+        <div class="col-2">
+        </div>
+        <div class="col"><img src="img/publications/seed-table-of-results.png" class="img-fluid" alt="Responsive image" style="width: 100%">
+        </div>
+        <div class="col-2">
+        </div>
+    </div>
+    <h3>
+        Reference
+    </h3>
+
+    <p class="reference" style="text-align:justify; text-justify:inter-ideograph">
+    1. Wei-Long Zheng, and Bao-Liang Lu, Investigating Critical Frequency Bands and Channels for
+        EEG-based Emotion Recognition with Deep Neural Networks, IEEE Transactions on Autonomous Mental Development
+        (IEEE TAMD) 7(3): 162-175, 2015.
+        [<a href="http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=7104132&tag=1">link</a>]
+        [<a href="resource/bib/1.htm">BibTex</a>]
+    </p>
+    <p class="reference" style="text-align:justify; text-justify:inter-ideograph">
+    2. Wei-Long Zheng, Jia-Yi Zhu, and Bao-Liang Lu, Identifying Stable Patterns over Time for Emotion Recognition from EEG, to appear in IEEE Transactions on Affective Computing, 2017.
+        [<a href="http://ieeexplore.ieee.org/document/7938737/">link</a>]
+    </p>
+    <p class="reference" style="text-align:justify; text-justify:inter-ideograph">
+    3. Wei-Long Zheng, Hao-Tian Guo, and Bao-Liang Lu, Revealing Critical Channels and Frequency Bands for EEG-based Emotion Recognition with Deep Belief Network, the 7th International IEEE EMBS Conference on Neural Engineering (IEEE NER'15) 2015: 154-157.
+        [<a href="http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=7146583">link</a>]
+        [<a href="resource/bib/3.htm">BibTex</a>]
+    </p>
+    <p class="reference" style="text-align:justify; text-justify:inter-ideograph">
+4. Wei-Long Zheng, Jia-Yi Zhu, Yong Peng, Bao-Liang Lu, EEG-based emotion classification using deep belief networks. IEEE International Conference on Multimedia and Expo (ICME) 2014: 1-6
+        [<a href="http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6890166">link</a>]
+        [<a href="resource/bib/4.htm">BibTex</a>]
+    </p>
+
+
+</div>
+    </div>
+    <div id="content_footer"></div>
+    <div id="footer">
+        Copyright &copy; 2018 BCMI
+    </div>
+</div>
+</body>
+</html>

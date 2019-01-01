@@ -1,0 +1,211 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>SEED Dataset</title>
+    <meta name="description" content="website description"/>
+    <meta name="keywords" content="website keywords, website keywords"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" type="text/css" href="style/style.css" title="style"/>
+    <style type="text/css">
+<!--
+body,td,th {
+	font-size: 0.8em;
+}
+.STYLE1 {font-size: 150%}
+.STYLE2 {font-family: "Courier New", Courier, monospace}
+.STYLE3 {font-size: medium}
+.STYLE4 {font-size: medium; font-weight: bold; }
+.STYLE5 {color: #FF0000}
+.STYLE6 {font-size: medium; font-weight: bold; color: #FF0000; }
+-->
+
+    </style>
+</head>
+
+<body>
+<div id="main">
+    <div id="header">
+        <div id="logo">
+            <div style="position:relative; height: 30px"></div>
+            <div id="logo_text">
+                <!-- class="logo_colour", allows you to change the colour of the text -->
+                <h1><a href="index.html"><strong>SEED<span class="logo_colour"> Dataset </span></strong></a></h1>
+                <h2 class="STYLE1">A dataset collection for various purposes using EEG signals </h2>
+            </div>
+            <div align="right">
+                <a href="http://www.sjtu.edu.cn/"><img src="img/sjtu.png" width="108" height="108" border="0"></a>
+                <a href="http://bcmi.sjtu.edu.cn/"><img src="img/bcmi.png" width="266" height="111" border="0"></a>
+            </div>
+        </div>
+        <div id="menubar">
+            <ul id="menu">
+                <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
+                <li><a href="index.html">Home</a></li>
+                <li class="drop-down selected"><a href="#">description<span
+                        class="triangle-border-down"></span></a>
+                    <!--<div style="position:absolute;">-->
+                        <div class="drop-down-content">
+                            <div class="drop-down-item" onclick="window.location.href='#'">SEED</div>
+                            <div class="drop-down-item" onclick="window.location.href='seed-iv.html'">SEED-IV</div>
+                            <div class="drop-down-item" onclick="window.location.href='seed-vig.html'">SEED-VIG</div>
+                        </div>
+                    <!--</div>-->
+                </li>
+                <li class="drop-down"><a href="downloads.html">download<span class="triangle-border-down"></span></a>
+                    <!--<div style="position:absolute;">-->
+                        <div class="drop-down-content">
+                            <div class="drop-down-item" onclick="window.location.href='downloads.html#seed-access-anchor'">SEED</div>
+                            <div class="drop-down-item" onclick="window.location.href='downloads.html#seed-iv-access-anchor'">SEED-IV</div>
+                            <div class="drop-down-item" onclick="window.location.href='downloads.html#seed-vig-access-anchor'">SEED-VIG</div>
+                        </div>
+                    <!--</div>-->
+                </li>
+                <li><a href="publications.html">Publication</a></li>
+                <li><a href="contacts.html">Contact Us</a></li>
+                <!--<li><a href="contact.html">Contact Us</a></li>-->
+            </ul>
+        </div>
+    </div>
+    <div id="site_content">
+        <div class="container padding-container" style="text-align:justify; text-justify:inter-ideograph;">
+    <h2 style="margin: 5px 0px 12px">Dataset Summary</h2>
+    The SEED consists of two parts:
+    </p>
+
+    <ol style="list-style-position: inside;">
+        <li>
+            The stimuli.
+            About 15 Chinese film clips (positive, neutral and negative emotions) were chosen from the pool of
+            materials in a preliminary study. The duration of each film clip is about 4 minutes.
+        </li>
+        <li>
+            The EEG data.
+            EEG signals and facial videos of 15 subjects were recorded while they were watching the emotional film
+            clips.
+            In order to investigate neural signatures and stable patterns across sessions and individuals,
+            each subject is required to perform the experiments for three sessions.
+            There are totally 45 experiments in this dataset.
+        </li>
+    </ol>
+
+    <h2 style="margin: 25px 0px 12px">Stimuli</h2>
+    <table class="row align-items-center" style="margin-top: 20px; margin-bottom: 20px">
+        <tr>
+        <td class="col-6"><div class=""><img src="img/seed/neutral.jpg" class="img-fluid" alt="Responsive image" style="width: 100%">
+        </div></td>
+        <td class="col-6"><div class=""><img src="img/seed/negative.jpg" class="img-fluid" alt="Responsive image" style="width: 100%">
+        </div></td>
+        </tr>
+    </table>
+    These are the selected emotional film clips as stimuli used in the experiments.
+    The selection criteria for film clips are as follows:
+    (a) the length of the whole experiment should not be too long in case it will make subjects fatigue;
+    (b) the videos should be understood without explanation;
+    and (c) the videos should elicit a single desired target emotion.
+    At last, 15 Chinese film clips (positive, neutral and negative emotions) were chosen from the pool of materials,
+    which received highest match across participates.
+    The duration of each film clip is about 4 minutes.
+    Each film clip is well edited to create coherent emotion eliciting and maximize emotional meanings.
+    The details of the film clips used in the experiments are listed below:
+
+    <table class="row align-items-center" style="margin-top: 20px; margin-bottom: 20px">
+        <tr>
+        <td class="col-3"></td>
+        <td class="col-6"><img src="img/seed/stimuli_table.png" class="img-fluid" alt="Responsive image"
+                              style="width: 100%"></td>
+        <td class="col-3"></td>
+        </tr>
+    </table>
+
+    There are totally 15 trials for each experiment.
+    There is a 15s hint before each clips and 10s feedback after each clip.
+    The order of presentation is arranged so that two film clips targeting the same emotion are not shown consecutively.
+    For the feedback, participants are told to report their emotional reactions to each
+    film clip by completing the questionnaire immediately after watching each clip.
+    The detailed protocol is shown below:
+
+    <table class="row align-items-center" style="margin-top: 20px; margin-bottom: 20px">
+        <tr>
+        <td class="col-2"></td>
+        <td class="col-6"><img src="img/seed/protocol.png" class="img-fluid" alt="Responsive image" style="width: 100%">
+        </td>
+        <td class="col-2"></td>
+        </tr>
+    </table>
+
+    <h2 style="margin: 25px 0px 12px">
+        Subject_list
+    </h2>
+    This file contains the specific information of the subjects during the experiments.
+    The EEG signals of each subjects were saved as separate files with the id of the subjects and the date.
+    So this file can help list each data file when analyzing this dataset.
+    Fifteen subjects (7 males and 8 females; MEAN: 23.27, STD: 2.37) participated in the experiments.
+    <!--<br/>-->
+    <!--<br/>-->
+    <!--The detailed list of the subjects can be downloaded in the <a href="#">DOWNLOAD</a> page.-->
+
+    <h2 style="margin: 25px 0px 12px">Data_preprocessed</h2>
+    These files contain a downsampled, preprocessed and segmented version of the EEG data in Matlab (.mat file).
+    The data was downsampled to 200Hz.
+    A bandpass frequency filter from 0-75Hz was applied.
+    We extracted the EEG segments corresponding to the duration of each movie.
+    There are totally 45 .mat (Matlab) files, one for per experiment.
+    Each subject performed the experiment three times with an interval of about one week.
+    Each subject file contains 16 arrays.
+    15 arrays contain segmented preprocessed EEG data of 15 trials in one experiment (eeg_1~eeg_15, channel×data).
+    A array name labels contains the label of the corresponding emotional labels
+    (-1 for negative, 0 for neutral and +1 for positive).
+
+    The detailed order of the channels is included in the dataset.
+    The EEG cap according to the international 10-20 system for 62 channels is shown below:
+    <table class="row align-items-center" style="margin-top: 20px; margin-bottom: 20px">
+        <tr>
+        <td class="col-4"></td>
+        <!--<div class="col-5"><img src="img/seed-iv/environment.png" class="img-fluid" alt="Responsive image" style="width: 100%">-->
+        <!--</div>-->
+        <td class="col-4"><img src="img/seed/asm.png" class="img-fluid" alt="Responsive image"
+                              style="width: 100%"></td>
+        <td class="col-4"></td>
+        </tr>
+    </table>
+
+    <h2 style="margin: 25px 0px 12px">Extracted Features</h2>
+    These files contain the extracted differential entropy (DE) features of the EEG signals,
+    which was first proposed in [1].
+    These data is well-suited to those who want to quickly test a classification method without propcessing the raw
+    EEG data. The file format is the same as the Data_prepocessed.
+    We also computed differential asymmetry (DASM) and rational asymmetry (RASM) features as the differences and
+    ratios between the DE features of 27 pairs of hemispheric asymmetry electrodes.
+    All the features were further smooth with conventional moving average and linear dynamic systems (LDS) approaches.
+    For more details about the feature extraction and feature smooth, please refer to [1] and [2].
+
+    <h2 style="margin: 25px 0px 12px">Download</h2>
+
+    <a class="btn btn-outline-dark" href="downloads.html#seed-access-anchor" style="font-size: 1.5em">
+        <img src="img/download-icon.png" style="position:relative; top: 0.3em; height: 1.5em">
+        Download SEED</a>
+
+    <h2 style="margin: 25px 0px 12px">References</h2>
+            <p class="reference" style="text-align:justify; text-justify:inter-ideograph">
+    1. Ruo-Nan Duan, Jia-Yi Zhu and Bao-Liang Lu, Differential Entropy Feature for EEG-based Emotion Classification,
+    Proc. of the 6th International IEEE EMBS Conference on Neural Engineering (NER). 2013: 81-84.
+    [<a href="http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6695876">link</a>]
+    [<a href="resource/bib/2.htm">BibTex</a>]
+            </p>
+            <p class="reference" style="text-align:justify; text-justify:inter-ideograph">
+    2. Wei-Long Zheng, and Bao-Liang Lu, Investigating Critical Frequency Bands and Channels for EEG-based
+    Emotion Recognition with Deep Neural Networks, accepted by IEEE Transactions on Autonomous Mental Development
+    (IEEE TAMD) 7(3): 162-175, 2015.
+    [<a href="http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=7104132&tag=1">link</a>]
+    [<a href="resource/bib/1.htm">BibTex</a>]
+            </p>
+</div>
+    </div>
+    <div id="content_footer"></div>
+    <div id="footer">
+        Copyright &copy; 2018 BCMI
+    </div>
+</div>
+</body>
+</html>
