@@ -113,15 +113,15 @@ body,td,th {
 
     Additionally, the participants wear
     <a href=" https://www.smivision.com/eye-tracking/product/eye-tracking-glasses/">SMI eye-tracking glasses</a> so that
-    their eye motion was also recorded. We then calculate the PERCLOS indicator values of the participants during the
+    their eye movements were also recorded. We then calculate the PERCLOS indicator values of the participants during the
     experiment and use them as the vigilance labels.
 
     <h2 style="margin: 25px 0px 12px">Feature Extraction</h2>
     For the temporal and occipital channels, PSD and DE features are directly extracted at the frequency bands referred
     above. For the forehead channels, we decompose the original EEG signals to forehead EEG signals
     (which is mostly related to the subjects' brain activity) and
-    EOG signals (which is mostly related to the subjects' eye motion induced electrical field fluctuation, by means of
-    ICA and minus methods. The EOG components are then used to produce 36 eye motion related features.
+    EOG signals (which is mostly related to the subjects' eye movements induced electrical field fluctuation, by means of
+    ICA and minus methods. The EOG components are then used to produce 36 eye movement related features.
     The <a href=" https://www.smivision.com/eye-tracking/product/eye-tracking-glasses/">SMI eye-tracking glasses</a> provides information about eye closure, so we can simply calculate the PERCLOS labels
     by the following formulation.
 
@@ -182,7 +182,10 @@ body,td,th {
         <img src="img/download-icon.png" style="position:relative; top: 0.3em; height: 1.5em">
         Download SEED-VIG</a>
 
-    <h2 style="margin: 25px 0px 12px">References</h2>
+    <h2 style="margin: 25px 0px 12px">Reference</h2>
+            <p class="reference" style="text-align:justify; text-justify:inter-ideograph">
+                If you feel the dataset helpful for your study, please add the following reference to your publications.
+            </p>
     <p class="reference" style="text-align:justify; text-justify:inter-ideograph">
     1. Wei-Long Zheng and Bao-Liang Lu, A multimodal approach to estimating vigilance using EEG and forehead EOG.
     Journal of Neural Engineering, 14(2): 026017, 2017.
@@ -193,7 +196,7 @@ body,td,th {
     </div>
     <div id="content_footer"></div>
     <div id="footer">
-        Copyright &copy; 2018 BCMI
+        Copyright &copy; 2019 BCMI
     </div>
 </div>
 </body>

@@ -69,27 +69,8 @@ body,td,th {
     </div>
     <div id="site_content">
         <div class="container padding-container" style="text-align:justify; text-justify:inter-ideograph;">
-    <h2 style="margin: 5px 0px 12px">Dataset Summary</h2>
-    The SEED consists of two parts:
-    </p>
 
-    <ol style="list-style-position: inside;">
-        <li>
-            The stimuli.
-            About 15 Chinese film clips (positive, neutral and negative emotions) were chosen from the pool of
-            materials in a preliminary study. The duration of each film clip is about 4 minutes.
-        </li>
-        <li>
-            The EEG data.
-            EEG signals and facial videos of 15 subjects were recorded while they were watching the emotional film
-            clips.
-            In order to investigate neural signatures and stable patterns across sessions and individuals,
-            each subject is required to perform the experiments for three sessions.
-            There are totally 45 experiments in this dataset.
-        </li>
-    </ol>
-
-    <h2 style="margin: 25px 0px 12px">Stimuli</h2>
+    <h2 style="margin: 25px 0px 12px">Stimuli and Experiment</h2>
     <table class="row align-items-center" style="margin-top: 20px; margin-bottom: 20px">
         <tr>
         <td class="col-6"><div class=""><img src="img/seed/neutral.jpg" class="img-fluid" alt="Responsive image" style="width: 100%">
@@ -98,13 +79,14 @@ body,td,th {
         </div></td>
         </tr>
     </table>
-    These are the selected emotional film clips as stimuli used in the experiments.
+    15 Chinese film clips (positive, neutral and negative emotions) were chosen from the pool of materials
+            as stimuli used in the experiments.
     The selection criteria for film clips are as follows:
     (a) the length of the whole experiment should not be too long in case it will make subjects fatigue;
     (b) the videos should be understood without explanation;
     and (c) the videos should elicit a single desired target emotion.
-    At last, 15 Chinese film clips (positive, neutral and negative emotions) were chosen from the pool of materials,
-    which received highest match across participates.
+    <!--At last, ,-->
+    <!--which received highest match across participates.-->
     The duration of each film clip is about 4 minutes.
     Each film clip is well edited to create coherent emotion eliciting and maximize emotional meanings.
     The details of the film clips used in the experiments are listed below:
@@ -135,18 +117,31 @@ body,td,th {
     </table>
 
     <h2 style="margin: 25px 0px 12px">
-        Subject_list
+        Subjects
     </h2>
-    This file contains the specific information of the subjects during the experiments.
-    The EEG signals of each subjects were saved as separate files with the id of the subjects and the date.
-    So this file can help list each data file when analyzing this dataset.
-    Fifteen subjects (7 males and 8 females; MEAN: 23.27, STD: 2.37) participated in the experiments.
+    <!--This file contains the specific information of the subjects during the experiments.-->
+    <!--The EEG signals of each subjects were saved as separate files with the id of the subjects and the date.-->
+    <!--So this file can help list each data file when analyzing this dataset.-->
+    Fifteen Chinese subjects (7 males and 8 females; MEAN: 23.27, STD: 2.37) participated in the experiments.
+    In order to protect personal privacy, we have hidden their names and indicate each subject with a number from
+            1 to 15.
     <!--<br/>-->
     <!--<br/>-->
     <!--The detailed list of the subjects can be downloaded in the <a href="#">DOWNLOAD</a> page.-->
 
-    <h2 style="margin: 25px 0px 12px">Data_preprocessed</h2>
-    These files contain a downsampled, preprocessed and segmented version of the EEG data in Matlab (.mat file).
+    <h2 style="margin: 5px 0px 12px">Dataset Summary</h2>
+    The SEED consists of two parts:
+    </p>
+
+    <ol style="list-style-position: inside; margin-left: 0; padding-left: 0;">
+        <li>
+            <!--The EEG data.-->
+            <!--EEG signals and facial videos of 15 subjects were recorded while they were watching the emotional film-->
+            <!--clips.-->
+            <!--In order to investigate neural signatures and stable patterns across sessions and individuals,-->
+            <!--each subject is required to perform the experiments for three sessions.-->
+            <!--There are totally 45 experiments in this dataset.-->
+            In the "Preprocessed_EEG" folder, there are files containing downsampled, preprocessed and segmented versions of the EEG data in Matlab (.mat file).
     The data was downsampled to 200Hz.
     A bandpass frequency filter from 0-75Hz was applied.
     We extracted the EEG segments corresponding to the duration of each movie.
@@ -169,9 +164,10 @@ body,td,th {
         <td class="col-4"></td>
         </tr>
     </table>
+        </li>
+        <li>
 
-    <h2 style="margin: 25px 0px 12px">Extracted Features</h2>
-    These files contain the extracted differential entropy (DE) features of the EEG signals,
+            In the "Extracted_Features" folder, there are files containing extracted differential entropy (DE) features of the EEG signals,
     which was first proposed in [1].
     These data is well-suited to those who want to quickly test a classification method without propcessing the raw
     EEG data. The file format is the same as the Data_prepocessed.
@@ -179,6 +175,8 @@ body,td,th {
     ratios between the DE features of 27 pairs of hemispheric asymmetry electrodes.
     All the features were further smooth with conventional moving average and linear dynamic systems (LDS) approaches.
     For more details about the feature extraction and feature smooth, please refer to [1] and [2].
+        </li>
+    </ol>
 
     <h2 style="margin: 25px 0px 12px">Download</h2>
 
@@ -187,6 +185,9 @@ body,td,th {
         Download SEED</a>
 
     <h2 style="margin: 25px 0px 12px">References</h2>
+            <p class="reference" style="text-align:justify; text-justify:inter-ideograph">
+                If you feel the dataset helpful for your study, please add the following references to your publications.
+            </p>
             <p class="reference" style="text-align:justify; text-justify:inter-ideograph">
     1. Ruo-Nan Duan, Jia-Yi Zhu and Bao-Liang Lu, Differential Entropy Feature for EEG-based Emotion Classification,
     Proc. of the 6th International IEEE EMBS Conference on Neural Engineering (NER). 2013: 81-84.
@@ -204,7 +205,7 @@ body,td,th {
     </div>
     <div id="content_footer"></div>
     <div id="footer">
-        Copyright &copy; 2018 BCMI
+        Copyright &copy; 2019 BCMI
     </div>
 </div>
 </body>

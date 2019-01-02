@@ -84,7 +84,7 @@ body,td,th {
     </table>
     A total number of 15 subjects participated the experiment.
     For each participant, 3 sessions are performed on different days, and each session contains 24 trials.
-    In one trial, the participant watch one of the film clips, while his(her) EEG signals and eye motion are collected
+    In one trial, the participant watch one of the film clips, while his(her) EEG signals and eye movements are collected
     with the 62-channel <a href="http://compumedicsneuroscan.com/">ESI NeuroScan System</a> and
     <a href=" https://www.smivision.com/eye-tracking/product/eye-tracking-glasses/">SMI eye-tracking glasses</a>.
     An schedule diagram of trial is as follows.
@@ -115,7 +115,6 @@ body,td,th {
     <h2 style="margin: 25px 0px 12px">Feature Extraction</h2>
     Each session is sliced into 4-second non-overlapping segments.
     Each segment is regarded as one data sample during model training.
-    <!--The feature extraction happens in EEG signals and eye motion information within each of the segments.-->
     <h4 style="margin: 15px 0px 8px">EEG Features</h4>
     For the EEG signals, we extract power spectral density (PSD) and differential entropy (DE) features
     within each segment at 5 frequency
@@ -145,15 +144,15 @@ body,td,th {
         </tr>
     </table>
 
-    <h4 style="margin: 15px 0px 8px">Eye Motion Features</h4>
-    For the eye motion information collected with the SMI eye tracking glasses, we extracted various features from
+    <h4 style="margin: 15px 0px 8px">Eye Movement Features</h4>
+    For the eye movement information collected with the SMI eye tracking glasses, we extracted various features from
     different detailed parameters used in the literature, such as pupil diameter, fixation, saccade, and blink.
-    A detailed list of eye motion features is shown below.
+    A detailed list of eye movement features is shown below.
     <table class="row align-items-center" style="margin-top: 20px; margin-bottom: 20px">
         <tr>
         <td class="col-2">
         </td>
-        <td class="col-8"><img src="img/seed-iv/eye-motion-feature-list.png" class="img-fluid" alt="Responsive image" style="width: 100%">
+        <td class="col-8"><img src="img/seed-iv/eye-movement-feature-list.png" class="img-fluid" alt="Responsive image" style="width: 100%">
         </td>
         <td class="col-2">
         </td>
@@ -205,7 +204,7 @@ body,td,th {
             </table>
         </li>
         <li>
-            The "eye_raw_data" folder contains raw data of eye motion information recorded with the eye tracking glasses.
+            The "eye_raw_data" folder contains raw data of eye movement information recorded with the eye tracking glasses.
             There are 5 files for each session, which are in the following form:<br/><br/>
             <ul>
             <li>{SubjectName}_{Date}_blink.mat</li>
@@ -384,7 +383,10 @@ body,td,th {
         Download SEED-IV</a>
 
 
-    <h2 style="margin: 25px 0px 12px">References</h2>
+    <h2 style="margin: 25px 0px 12px">Reference</h2>
+            <p class="reference" style="text-align:justify; text-justify:inter-ideograph">
+                If you feel the dataset helpful for your study, please add the following reference to your publications.
+            </p>
             <p class="reference" style="text-align:justify; text-justify:inter-ideograph">
     Wei-Long Zheng, Wei Liu, Yifei Lu, Bao-Liang Lu, and Andrzej Cichocki, EmotionMeter:
     A Multimodal Framework for Recognizing Human Emotions. IEEE Transactions on Cybernetics, 2018.
@@ -395,7 +397,7 @@ body,td,th {
     </div>
     <div id="content_footer"></div>
     <div id="footer">
-        Copyright &copy; 2018 BCMI
+        Copyright &copy; 2019 BCMI
     </div>
 </div>
 </body>
