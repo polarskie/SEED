@@ -20,6 +20,7 @@ body,td,th {
 .STYLE6 {font-size: medium; font-weight: bold; color: #FF0000; }
 -->
 
+
     </style>
 </head>
 
@@ -45,20 +46,26 @@ body,td,th {
                 <li class="drop-down"><a href="#">description<span
                         class="triangle-border-down"></span></a>
                     <!--<div style="position:absolute;">-->
-                        <div class="drop-down-content">
-                            <div class="drop-down-item" onclick="window.location.href='seed.html'">SEED</div>
-                            <div class="drop-down-item" onclick="window.location.href='seed-iv.html'">SEED-IV</div>
-                            <div class="drop-down-item" onclick="window.location.href='seed-vig.html'">SEED-VIG</div>
-                        </div>
+                    <div class="drop-down-content">
+                        <div class="drop-down-item" onclick="window.location.href='seed.html'">SEED</div>
+                        <div class="drop-down-item" onclick="window.location.href='seed-iv.html'">SEED-IV</div>
+                        <div class="drop-down-item" onclick="window.location.href='seed-vig.html'">SEED-VIG</div>
+                    </div>
                     <!--</div>-->
                 </li>
                 <li class="drop-down"><a href="downloads.html">download<span class="triangle-border-down"></span></a>
                     <!--<div style="position:absolute;">-->
-                        <div class="drop-down-content">
-                            <div class="drop-down-item" onclick="window.location.href='downloads.html#seed-access-anchor'">SEED</div>
-                            <div class="drop-down-item" onclick="window.location.href='downloads.html#seed-iv-access-anchor'">SEED-IV</div>
-                            <div class="drop-down-item" onclick="window.location.href='downloads.html#seed-vig-access-anchor'">SEED-VIG</div>
+                    <div class="drop-down-content">
+                        <div class="drop-down-item" onclick="window.location.href='downloads.html#seed-access-anchor'">
+                            SEED
                         </div>
+                        <div class="drop-down-item"
+                             onclick="window.location.href='downloads.html#seed-iv-access-anchor'">SEED-IV
+                        </div>
+                        <div class="drop-down-item"
+                             onclick="window.location.href='downloads.html#seed-vig-access-anchor'">SEED-VIG
+                        </div>
+                    </div>
                     <!--</div>-->
                 </li>
                 <li><a href="publications.html">Publication</a></li>
@@ -69,14 +76,18 @@ body,td,th {
     </div>
     <div id="site_content">
         <div class="container padding-container">
-            <table style="width: 100%">
+            <div style="">
+                <img src="img/index/environment_facility.png" class="img-fluid"
+                                           alt="Responsive image" style="float: left; height: 273px;">
+                <img src="img/index/luolujin_corp-new.gif" class="img-fluid"
+                                           alt="Responsive image" style="float: right; height: 273px;">
+            </div>
+            <table style="width: 100%; padding-top: 20px">
                 <tr>
-                    <td class="col-4"><div class="padding-container"><img src="img/index/brain_sm.png" class="img-fluid" alt="Responsive image"
-                                                style="width: 95%"></div></td>
-                    <td class="col-7" style="font-size: 1.1em">
+                    <td class="col-12" style="font-size: 1.1em">
                         <p style="text-align:justify; text-justify:inter-ideograph;">
                             SJTU Emotion EEG Dataset(SEED), is
-                a collection of EEG dataset provided by the
+                            a collection of EEG dataset provided by the
                             <a href="http://bcmi.sjtu.edu.cn/">BCMI laboratory</a> which is led by
                             <a href="http://bcmi.sjtu.edu.cn/~blu/">Prof. Bao-Liang Lu</a>.
                             The name is inherited from the first version of the dataset, but now we provide not only
@@ -96,8 +107,8 @@ body,td,th {
                 </div>
             </div>
         </div>
-<br/>
-<br/>
+        <br/>
+        <br/>
         <div class="container padding-container">
             <a href="seed.html" style="color: #444; margin-bottom: 1em; font-size: 2.4em"><strong>SEED</strong>
                 <img src="img/link-icon.png" style="position:relative; bottom: 0.1em; left: -0.1em; height: 0.7em"></a>
@@ -123,8 +134,8 @@ body,td,th {
                 </div>
             </div>
         </div>
-<br/>
-<br/>
+        <br/>
+        <br/>
 
         <div class="container padding-container">
             <a href="seed-iv.html" style="color: #444; margin-bottom: 45px; font-size: 2.4em"><strong>SEED-IV</strong>
@@ -154,8 +165,8 @@ body,td,th {
             </div>
         </div>
 
-<br/>
-<br/>
+        <br/>
+        <br/>
         <div class="container padding-container">
             <a href="seed-vig.html" style="color: #444; margin-bottom: 45px; font-size: 2.4em"><strong>SEED-VIG</strong>
                 <img src="img/link-icon.png" style="position:relative; bottom: 0.1em; left: -0.1em; height: 0.7em"></a>
@@ -182,20 +193,21 @@ body,td,th {
             </table>
         </div>
 
-<br/>
-<br/>
+        <br/>
+        <br/>
         <div class="container padding-container">
             <h2 class='STYLE2' style="margin: 0px 0px 12px">Acknowledgement</h2>
-                        <p class="STYLE2" style="font-size: 0.8em; text-align:justify; text-justify:inter-ideograph; color: #000;">
-            This work was supported in part by the grants from the
-                            the National Key Research and Development Program of China (Grant No. 2017YFB1002501),
-                            the National Natural Science Foundation of China (Grant No. 61272248 and No. 61673266),
-                            the National Basic Research Program of China (Grant No. 2013CB329401),
-                            the Science and Technology Commission of Shanghai Municipality (Grant No.13511500200),
-                            the Open Funding Project of National Key Laboratory of Human Factors Engineering (Grant No. HF2012-K-01),
-                            the Fundamental Research Funds for the Central Universities,
-                            and the European Union Seventh Framework Program (Grant No.247619).
-                        </p>
+            <p class="STYLE2" style="font-size: 0.8em; text-align:justify; text-justify:inter-ideograph; color: #000;">
+                This work was supported in part by the grants from the
+                the National Key Research and Development Program of China (Grant No. 2017YFB1002501),
+                the National Natural Science Foundation of China (Grant No. 61272248 and No. 61673266),
+                the National Basic Research Program of China (Grant No. 2013CB329401),
+                the Science and Technology Commission of Shanghai Municipality (Grant No.13511500200),
+                the Open Funding Project of National Key Laboratory of Human Factors Engineering (Grant No.
+                HF2012-K-01),
+                the Fundamental Research Funds for the Central Universities,
+                and the European Union Seventh Framework Program (Grant No.247619).
+            </p>
         </div>
     </div>
     <div id="content_footer"></div>
